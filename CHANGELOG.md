@@ -18,4 +18,4 @@ New Features:
 
 ## 1.0.0 (2021-07-02)
 New Features:
-* 项目初始化版本 ([2](https://github.com/PandaTtttt/go-assembly/pull/2))
+* 项目初始化版本 ([1](https://github.com/PandaTtttt/go-assembly/pull/1))
