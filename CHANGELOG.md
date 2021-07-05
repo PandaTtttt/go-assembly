@@ -16,6 +16,6 @@ New Features:
 * Support baz ([xxx](https://github.com/PandaTtttt/go-assembly/-/pull/xxx))
 * Enable qux ([xxx](https://github.com/PandaTtttt/go-assembly/-/pull/xxx))
 
-## 1.0.0 (2021-07-02)
+## 1.0.0 (2021-07-05)
 New Features:
 * 项目初始化版本 ([1](https://github.com/PandaTtttt/go-assembly/pull/1))
