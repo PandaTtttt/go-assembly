@@ -19,3 +19,6 @@ New Features:
 ## 1.0.0 (2021-07-05)
 New Features:
 * 项目初始化版本 ([1](https://github.com/PandaTtttt/go-assembly/pull/1))
+## 1.0.1 (2021-01-19)
+Improvements:
+* redis新增DB配置 ([2](https://github.com/PandaTtttt/go-assembly/pull/2))
