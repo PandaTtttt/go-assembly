@@ -22,10 +22,10 @@ func initRedisConn(index int) {
 	client := &redis.Client{}
 	switch option := rs.Option.(type) {
 	case redis.Options:
-		option.DB = index
+		//option.DB = index
 		client = redis.NewClient(&option)
 	case redis.FailoverOptions:
-		option.DB = index
+		//option.DB = index
 		client = redis.NewFailoverClient(&option)
 	}
 	must.String(client.Ping().Result())
