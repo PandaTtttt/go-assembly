@@ -28,6 +28,7 @@ const (
 	RedisNetwork  = "REDIS_NETWORK"
 	RedisAddr     = "REDIS_ADDR"
 	RedisPassword = "REDIS_PASSWORD"
+	RedisDb       = "REDIS_DB"
 
 	GoUseDefault         = "GO_ENVUSEDEFAULT"
 	GoEnv                = "GO_ENV"
