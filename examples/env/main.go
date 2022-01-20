@@ -23,7 +23,7 @@ func main() {
 	redis.Init(&redis.Params{
 		Addr:     "127.0.0.1:6379",
 		Password: "",
-		DB:       "10",
+		DB:       "0",
 	})
 	// 初始化后方可使用全局的RS连接实体conn.RS()
 	// 在调用redis.Init之前调用conn.RS()会panic
