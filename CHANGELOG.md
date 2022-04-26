@@ -24,3 +24,6 @@ Improvements:
 * redis新增DB配置 ([2](https://github.com/PandaTtttt/go-assembly/pull/2))
 ## 0.0.3 (2021-01-19):
 * redis新增DB配置fix ([3](https://github.com/PandaTtttt/go-assembly/pull/3))
+## 0.0.3 (2021-04-26):
+New Features:
+* 新增timeutil工具包([4](https://github.com/PandaTtttt/go-assembly/pull/4))
