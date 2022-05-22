@@ -6,32 +6,35 @@ import (
 	"go.uber.org/zap"
 )
 
-type Queue struct {
+type QueueX struct {
 	maxProcs int
 
 	goCh    chan struct{}
 	taskQue chan struct {
-		name string
-		f    func() error
+		name   string
+		startF func()
+		f      func() error
+		errF   func(error)
+		endF   func()
 	}
 }
 
-// New
-// maxProcs 设置最大goroutine数量
-// queBuf 设置任务频道的缓冲区大小
-func New(maxProcs, queBuf int) *Queue {
-	q := &Queue{
+func NewX(maxProcs, queBuf int) *QueueX {
+	q := &QueueX{
 		maxProcs: maxProcs,
 		goCh:     make(chan struct{}, maxProcs),
 		taskQue: make(chan struct {
-			name string
-			f    func() error
+			name   string
+			startF func()
+			f      func() error
+			errF   func(error)
+			endF   func()
 		}, queBuf),
 	}
 	return q
 }
 
-func (q *Queue) Run() {
+func (q *QueueX) Run() {
 	for i := 0; i < q.maxProcs; i++ {
 		go q.worker()
 	}
@@ -43,7 +46,7 @@ func (q *Queue) Run() {
 	}()
 }
 
-func (q *Queue) worker() {
+func (q *QueueX) worker() {
 	defer func() {
 		if err := recover(); err != nil {
 			zlog.Error("Unexpected panic",
@@ -54,16 +57,28 @@ func (q *Queue) worker() {
 	}()
 	for {
 		t := <-q.taskQue
+		if t.startF != nil {
+			t.startF()
+		}
 		err := t.f()
 		if err != nil {
+			if t.errF != nil {
+				t.errF(err)
+			}
 			zlog.Error(t.name, zap.Error(err))
+		}
+		if t.endF != nil {
+			t.endF()
 		}
 	}
 }
 
-func (q *Queue) Push(name string, f func() error) {
+func (q *QueueX) Push(name string, f func() error, startF func(), endF func(), errF func(error)) {
 	q.taskQue <- struct {
-		name string
-		f    func() error
-	}{name: name, f: f}
+		name   string
+		startF func()
+		f      func() error
+		errF   func(error)
+		endF   func()
+	}{name: name, f: f, startF: startF, endF: endF, errF: errF}
 }
