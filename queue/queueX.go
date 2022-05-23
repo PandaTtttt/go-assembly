@@ -66,9 +66,10 @@ func (q *QueueX) worker() {
 				t.errF(err)
 			}
 			zlog.Error(t.name, zap.Error(err))
-		}
-		if t.endF != nil {
-			t.endF()
+		} else {
+			if t.endF != nil {
+				t.endF()
+			}
 		}
 	}
 }

@@ -47,3 +47,9 @@ New Features:
 Improvements:
 
 * [queue新增queueX](https://github.com/PandaTtttt/go-assembly/pull/6)
+
+## 0.0.6 (2022-05-22):
+
+Bug Fixes:
+
+* [queueX-结束与错误任务互斥](https://github.com/PandaTtttt/go-assembly/pull/7)
