@@ -2,7 +2,7 @@ module github.com/PandaTtttt/go-assembly
 
 require (
 	github.com/Shopify/sarama v1.26.4
-	github.com/gin-gonic/gin v1.7.0
+	github.com/gin-gonic/gin v1.7.7
 	github.com/go-redis/redis/v7 v7.4.0
 	github.com/onsi/ginkgo v1.13.0 // indirect
 	github.com/stretchr/testify v1.5.1
