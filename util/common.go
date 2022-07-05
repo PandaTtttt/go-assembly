@@ -2,6 +2,7 @@ package util
 
 import (
 	"fmt"
+	"runtime"
 	"sort"
 )
 
@@ -26,4 +27,12 @@ func Sign(data map[string]interface{}, privateKey string) string {
 	}
 	sortString += fmt.Sprintf("key=%v", privateKey)
 	return Md5String(sortString)
+}
+
+// RunFuncName 获取正在运行的函数名
+func RunFuncName() string {
+	pc := make([]uintptr, 1)
+	runtime.Callers(2, pc)
+	f := runtime.FuncForPC(pc[0])
+	return f.Name()
 }
