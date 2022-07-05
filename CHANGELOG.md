@@ -53,3 +53,7 @@ Improvements:
 Bug Fixes:
 
 * [queueX-结束与错误任务互斥](https://github.com/PandaTtttt/go-assembly/pull/7)
+
+## 0.0.7 (2022-07-05):
+
+* [common新增RunFuncName](https://github.com/PandaTtttt/go-assembly/pull/9)
