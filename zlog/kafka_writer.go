@@ -1,8 +1,8 @@
 package zlog
 
 import (
+	"github.com/IBM/sarama"
 	"github.com/PandaTtttt/go-assembly/errs"
-	"github.com/Shopify/sarama"
 	"sync"
 )
 
