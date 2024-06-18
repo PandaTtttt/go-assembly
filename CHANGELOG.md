@@ -57,3 +57,7 @@ Bug Fixes:
 ## 0.0.7 (2022-07-05):
 
 * [common新增RunFuncName](https://github.com/PandaTtttt/go-assembly/pull/9)
+
+## 0.0.8 (2024-06-18):
+
+* [module版本升级](https://github.com/PandaTtttt/go-assembly/pull/10)
