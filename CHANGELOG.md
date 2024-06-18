@@ -60,4 +60,4 @@ Bug Fixes:
 
 ## 0.0.8 (2024-06-18):
 
-* [module版本升级](https://github.com/PandaTtttt/go-assembly/pull/10)
+* [module版本升级](https://github.com/PandaTtttt/go-assembly/pull/11)
